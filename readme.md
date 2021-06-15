@@ -28,6 +28,14 @@ API only accepts POST requests in JSON with the following paramters
 
 <br>
 
+**Exaple POST Request to the API:**
+```
+{
+    "url": "http://ing.dk/247528"
+}
+```
+
+
 ## Response parameters
 
 | Key | Description |
@@ -37,6 +45,16 @@ API only accepts POST requests in JSON with the following paramters
 | `jumpCount` | number of jumps the redirect made to resolve |
 | `jumps` | array of objects, containing jump object info |
 
+**Example response:**
+```
+{
+    "statusCode": 200,
+    "resolvedUrl": "https://www.google.dk/",
+    "jumpCount": 1,
+    "jumps": [...]
+}
+```
+
 <br>
 
 The `jumps` array have the following response keys:
@@ -45,6 +63,22 @@ The `jumps` array have the following response keys:
 | `statusCode` | http response statuscode on the specific redirect jump |
 | `jumpFrom` | the absolute url the redirect came from |
 | `jumpTo` | the absolute url the redirect points to |
+
+**Example response:**
+```
+    [
+    	{
+            "statusCode": 301,
+            "jumpFrom": "http://ing.dk/247528",
+            "jumpTo": "https://ing.dk/247528"
+        },
+        {
+            "statusCode": 301,
+            "jumpFrom": "https://ing.dk/247528",
+            "jumpTo": "https://ing.dk/artikel/skader-underernaering-gives-videre-boern-247528"
+        }
+    ]
+```
 
 <br>
 

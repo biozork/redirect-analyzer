@@ -25,7 +25,8 @@ API only accepts POST requests in JSON with the following paramters
 | ----- | ----------- | -------- |
 | `url` | Absolute path to check for redirects. | Yes |
 | `fixDead` | If hitting a dead (404) jump, try to resolve it | No |
-<br><br>
+
+<br>
 
 ## Response parameters
 
@@ -36,7 +37,7 @@ API only accepts POST requests in JSON with the following paramters
 | `jumpCount` | number of jumps the redirect made to resolve |
 | `jumps` | array of objects, containing jump object info |
 
-<br><br>
+<br>
 
 The `jumps` array have the following response keys:
 | Key | Description |
@@ -44,8 +45,8 @@ The `jumps` array have the following response keys:
 | `statusCode` | http response statuscode on the specific redirect jump |
 | `jumpFrom` | the absolute url the redirect came from |
 | `jumpTo` | the absolute url the redirect points to |
-<br>
 
+<br>
 
 ## Example: A single redirct
 **POST Request to the API:**

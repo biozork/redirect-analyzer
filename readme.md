@@ -11,7 +11,7 @@ Personally I have used this API to check redirects in order to resolve chained r
 
 You can also deploy directly to Heroku:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)]()
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/biozork/redirect-analyzer)
 <br><br>
 
 ## Call the API

@@ -1,0 +1,6 @@
+{
+    "name": "Redirect Analyzer",
+    "description": "A simple API to analyze redirects",
+    "repository": "https://github.com/biozork/redirect-analyzer/",
+    "keywords": ["node", "express", "static", "redirect"]
+  }

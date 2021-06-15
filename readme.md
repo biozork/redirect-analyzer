@@ -1,10 +1,14 @@
-# Redirect Analyzer. What it is
+# Redirect Analyzer. What it is ?
 Simple Node.JS api that will let you see info about every jump in a chained redirect. This API will show response status on each jump in a redirect chain, and return the entire chain as an array of objects for your own manipulation.
 
 If a jump resolves to 404, you can even try to "Fix dead" redirects, by adding the `"fixDead":true` parameter. That will look at the last jump that resolves to 404, and move backwards on the urlstructure until it finds a path that is no longer 404.
 
-## Why I made the tool
+## Why I made the tool ?
 Personally I have used this API to check redirects in order to resolve chained redirects, and to find, and potentially fix dead redirects for SEO purposes. But I guess you can use this for whatever you would like.
+
+If you want to know more about redirect chains, and why it is bad for SEO, take a look at this article from ContentKing (please note that I'm not affiliated):
+
+https://www.contentkingapp.com/academy/redirects/faq/redirect-chains/
 
 ## Install
 `npm install`
@@ -16,8 +20,19 @@ You can also deploy directly to Heroku:
 
 ## Call the API
 Running localhost - First start the server: `npm app`
-
 Then you can do POST requests to the API via `localhost:5000/api`
+
+Running heroku - if you clicked the onebutton-install above, it should be running automtically.
+Remember to add the `/api` to the heroku url you get after the install.
+
+With the API running, you can [test it with Postman](https://www.postman.com/)
+
+## Max amount of jumps / Redirect loops
+At this moment maximum amount of jumps are hardcoded to `5`. 
+
+This effectively kills redirect loops, and keeps the API relatively fast when hitting heavy chained redirects. If your chained redirect have more than 5 jumps consider increasing the `maxJumps` variable in `routes/api.js`
+
+
 
 ## Request format
 API only accepts POST requests in JSON with the following paramters
@@ -184,6 +199,4 @@ The `jumps` array have the following response keys:
     ]
 }
 ```
-
-
 
